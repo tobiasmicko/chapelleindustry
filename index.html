@@ -5,39 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chapelle Industry</title>
 
-  <style>
-    /* Reset default spacing */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Prevent scrolling */
-    html, body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    /* Center content */
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #000000;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 6vw, 4rem);
-      font-weight: 500;
-      letter-spacing: 0.05em;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Chapelle Industry</h1>
+
+  <div class="scene">
+    <div class="postcard" id="postcard">
+      
+      <!-- Front -->
+      <div class="postcard-face postcard-front">
+        <img id="postcard-image" alt="Postcard" />
+      </div>
+
+      <!-- Back -->
+      <div class="postcard-face postcard-back">
+        <div class="back-content">
+          <div class="center-text">
+            <p class="title">Chapelle Industry</p>
+            <p class="subtitle">is an artisanal homewares design studio.</p>
+          </div>
+
+          <div class="footer-text">
+            <a href="mailto:info@chapelleindustry.com">
+              info@chapelleindustry.com
+            </a>
+            <a href="https://www.instagram.com/chapelleindustry/" target="_blank" rel="noopener">
+              @chapelleindustry
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

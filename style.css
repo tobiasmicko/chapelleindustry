@@ -1,0 +1,121 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Lock scrolling completely */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #F2F2F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Helvetica, Arial, sans-serif;
+}
+
+/* Scene gives perspective */
+.scene {
+  perspective: 1200px;
+}
+
+/* Postcard container */
+.postcard {
+  position: relative;
+  width: min(80vw, 600px);
+  aspect-ratio: 3 / 2;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+  cursor: pointer;
+}
+
+/* Desktop: allow slightly larger margins */
+@media (min-width: 1024px) {
+  .postcard {
+    width: min(60vw, 700px);
+  }
+}
+
+/* Flip state */
+.postcard.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* Shared face styles */
+.postcard-face {
+  position: absolute;
+  inset: 0;
+  background: white;
+  backface-visibility: hidden;
+  border-radius: 2px;
+
+  /* Subtle drop shadow */
+  box-shadow: 
+    4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Front image */
+.postcard-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Back side */
+.postcard-back {
+  transform: rotateY(180deg);
+  display: flex;
+}
+
+/* Back content layout */
+.back-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center text */
+.center-text {
+  text-align: center;
+}
+
+.center-text p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #000;
+}
+
+.center-text .title {
+  font-weight: 500;
+}
+
+/* Footer links */
+.footer-text {
+  position: absolute;
+  bottom: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-text a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}

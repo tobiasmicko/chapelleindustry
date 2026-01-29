@@ -1,19 +1,24 @@
-// List your postcard images here
 const images = [
-  "postcard-1.jpg",
-  "postcard-2.jpg",
-  "postcard-3.jpg",
-  "postcard-4.jpg",
-  "postcard-5.jpg"
+  "images/postcard-1.jpg",
+  "images/postcard-2.jpg",
+  "images/postcard-3.jpg",
+  "images/postcard-4.jpg",
+  "images/postcard-5.jpg"
 ];
 
-// Pick a random image ONCE per page load
-const selectedImage = images[Math.floor(Math.random() * images.length)];
+// Preload all images
+images.forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
+
+// Select one image per full page load
+const selectedImage =
+  images[Math.floor(Math.random() * images.length)];
 
 const postcard = document.getElementById("postcard");
 const postcardImage = document.getElementById("postcard-image");
 
-// Set image
 postcardImage.src = selectedImage;
 
 // Flip interaction
